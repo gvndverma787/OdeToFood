@@ -1,0 +1,12 @@
+﻿@model IEnumerable<OdeToFood.Models.Restaurant>
+@{
+  ViewBag.Title = "Index";
+}
+@foreach (var item in Model)
+{
+  <h2>Review for @item.Name</h2>
+  @Html.Partial("_Reviews", item.Reviews)
+  <p>
+    @Html.ActionLink("Create New", "Create", new { restaurantId = item.Id })
+  </p>
+}
